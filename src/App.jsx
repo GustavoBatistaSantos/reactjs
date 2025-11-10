@@ -1,35 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
+function App(){/* cria a função componente*/
+  //let message = 'olá mundo';/* variavel em java script*/
+  const [message, setMessage] = useState('olá, mundo'); //o set message altera o valor do state, useState tem que ter a mensagem inicial
 
+  //state (estado) variavel que atualiza o componente
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  <div>
+    <h1>{message}</h1>{/*jsx em ação */}
+    <button onClick={() =>{
+      setMessage ('Olá, fui clicado');
+    }}>Mudar Mensagem</button>{/*cria um botão, o java script sempre vai dentro da chaves */ }
+  </div>/* o que ela vai retornar*/ 
+  );
 }
 
-export default App
+export default App /* exporta o app*/ 
