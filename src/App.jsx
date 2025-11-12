@@ -1,12 +1,35 @@
+import { useState } from "react";
 import AddTask from "./components/AddTask";
 import Tasks from "./components/Tasks";
 //import'./App.css'
 function App(){
   return(
-    <div>
-    <h1 /*className= "title" se quiser fazer pelo css*/ className="text-red-500">Gerenciador de tarefas</h1>
-    <AddTask/>
-    <Tasks/>
+    const [tasks, setTask] = useState([{
+      id:1,
+      title: "estudar programação",
+      description: "Estudar Programação para se tornar um desenvolvedor full stack",
+      isCompleted: false
+    }, {
+      id:2,
+      title: "estudar inglês",
+      description: "Estudar ingles para se tornar fluente",
+      isCompleted: false
+
+    }, {
+      id:3,
+      title: "estudar Matemática",
+      description: "Estudar Matemática para se tornar um desenvolvedor full stack",
+      isCompleted: false
+    }
+]);
+
+  return(
+    <div className="w-screen h-screen bg-slate-500 flex justify-center p-6"/*preenche a altura e a largura da tela inteira, background color, alinhamento responsabilidade e pading */>
+    <div className="w-[500px]" /*largura da div, */>
+      <h1 /*className= "title" se quiser fazer pelo css*/ className=/*"text-red-500"*/" text-3xl text-slate-100 font-bold text-center">Gerenciador de tarefas</h1>
+      <AddTask/>
+      <Tasks tasks={tasks}/>/*passei o tasks atráves dos proops */
+    </div>
     </div>
   );
 }
